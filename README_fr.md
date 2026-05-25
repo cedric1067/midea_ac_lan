@@ -65,9 +65,17 @@ Et d'autres encore.
 | FD   | Humidificateur                       | [FD.md](doc/FD.md) |
 
 # Installation
-Cherchez « Midea AC LAN » dans HACS et installez-le, ou copiez manuellement tous les fichiers du dossier `custom_components/midea_ac_lan` depuis la [dernière version](https://github.com/georgezhao2010/midea_ac_lan/releases/latest) vers `/custom_components/midea_ac_lan` dans Home Assistant.
 
-Redémarrez Home Assistant.
+Ce dépôt est un **fork** de [`georgezhao2010/midea_ac_lan`](https://github.com/georgezhao2010/midea_ac_lan) avec correctifs de sécurité, bug fixes et traduction française complète. Pour installer cette version (et pas l'upstream), il faut l'ajouter à HACS comme *dépôt personnalisé* :
+
+1. Ouvrez HACS dans Home Assistant.
+2. Menu `⋮` (en haut à droite) → **Dépôts personnalisés**.
+3. URL : `https://github.com/cedric1067/midea_ac_lan`
+4. Type : **Intégration** → **Ajouter**.
+5. Cherchez « Midea AC LAN » dans la liste HACS → **Télécharger**.
+6. **Redémarrez Home Assistant.**
+
+Alternative manuelle : copiez tous les fichiers du dossier `custom_components/midea_ac_lan` de ce dépôt vers `/config/custom_components/midea_ac_lan` dans votre Home Assistant, puis redémarrez.
 
 # Ajouter un appareil
 ***❗ Note : commencez par fixer une adresse IP statique pour votre appareil dans votre routeur, afin d'éviter que son IP ne change après la configuration.***
