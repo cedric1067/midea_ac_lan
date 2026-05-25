@@ -3,7 +3,7 @@
 [![Donate](https://img.shields.io/badge/donate-BuyMeCoffee-yellow.svg)](https://www.buymeacoffee.com/georgezhao2010)
 [![Stable](https://img.shields.io/github/v/release/georgezhao2010/midea_ac_lan)](https://github.com/georgezhao2010/midea_ac_lan/releases/latest)
 
-[English](README.md) | 简体中文
+[English](README.md) | 简体中文 | [Français](README_fr.md)
 
 通过本地局域网控制你的美的M-Smart设备
 

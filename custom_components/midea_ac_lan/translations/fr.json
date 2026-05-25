@@ -1,32 +1,32 @@
 {
     "config": {
         "error": {
-            "preset_account": "Failed to login with preset account, please report this issue",
-            "login_failed": "Failed to login, account or password was wrong",
+            "preset_account": "Échec de la connexion avec le compte prédéfini, merci de signaler le problème",
+            "login_failed": "Échec de la connexion : compte ou mot de passe incorrect",
             "no_devices": "Aucun nouvel appareil trouvé sur le réseau",
-            "device_exist": "L'appareil est déjà configurée",
+            "device_exist": "L'appareil est déjà configuré",
             "config_incorrect": "La configuration est incorrecte",
             "connect_error": "Impossible de se connecter à l'appareil",
-            "invalid_token": "Token ou Key dans un format incorrect"
+            "invalid_token": "Le Token ou la Clé est dans un format incorrect"
         },
         "step": {
             "user": {
                 "data": {
                     "way": "Ajout d'appareil"
                 },
-                "description": "Choisissez comment ajouter des appareils",
+                "description": "Choisissez comment ajouter un appareil",
                 "title": "Ajouter un nouvel appareil"
             },
             "login": {
                 "data": {
-                    "account": "Account",
-                    "password": "Password"
+                    "account": "Compte",
+                    "password": "Mot de passe"
                 },
-                "description": "Login and storage your Midea account only for getting the appliance info.\nYou can remove this configuration after all appliance configured.",
-                "title": "Login"
+                "description": "Connexion à votre compte Midea, uniquement pour récupérer les informations des appareils.\nVous pouvez supprimer cette configuration une fois tous les appareils ajoutés.",
+                "title": "Connexion"
             },
             "discovery": {
-                "description": "Saisissez l'adresse IP de l'appareil, entrez \"auto\" pour découvrir automatiquement.\nVous pouvez également utiliser une adresse IP pour rechercher dans un réseau spécifié, comme \"192.168.1.255\".",
+                "description": "Saisissez l'adresse IP de l'appareil, entrez « auto » pour une découverte automatique.\nVous pouvez aussi indiquer une adresse de diffusion pour cibler un réseau précis, par exemple « 192.168.1.255 ».",
                 "title": "Recherche",
                 "data": {
                     "ip_address": "Adresse IP"
@@ -34,27 +34,27 @@
             },
             "list":{
                 "description": "{table}",
-                "title": "Appareil"
+                "title": "Appareils"
             },
             "auto": {
                 "data": {
-                    "device": "Appareil"
+                    "device": "Appareils"
                 },
                 "description": "Choisissez un appareil à ajouter",
                 "title": "Nouvel appareil trouvé"
             },
             "manually": {
                 "data": {
-                    "name": "Nom (ex: Clim Salon)",
-                    "device_id": "Code appareil",
+                    "name": "Nom (ex. : Clim Salon)",
+                    "device_id": "Code de l'appareil",
                     "type": "Type",
                     "ip_address": "Adresse IP",
                     "port": "Port",
                     "model": "Modèle",
-                    "subtype": "Soustype",
+                    "subtype": "Sous-type",
                     "protocol": "Protocole",
                     "token": "Token",
-                    "key": "Key"
+                    "key": "Clé"
                 },
                 "description": "Configuration de l'appareil",
                 "title": "Nouvel appareil"
@@ -66,52 +66,52 @@
             "init": {
                 "data": {
                     "ip_address": "Adresse IP",
-                    "refresh_interval": "Refresh interval (0 means not refreshing actively)",
-                    "sensors": "Capteurs supplémentaire",
-                    "switches": "Contrôles supplémentaire",
+                    "refresh_interval": "Intervalle de rafraîchissement (0 = pas de rafraîchissement actif)",
+                    "sensors": "Capteurs supplémentaires",
+                    "switches": "Contrôles supplémentaires",
                     "customize": "Personnaliser"
                 },
                 "title": "Configurer"
             }
         },
         "abort": {
-            "account_option": "The account does not supports this operation.\nClick \"ADD DEVICE\" to  add a new device."
+            "account_option": "Ce compte ne prend pas en charge cette opération.\nCliquez sur « AJOUTER UN APPAREIL » pour ajouter un nouvel appareil."
         }
     },
     "services": {
         "set_attribute": {
-            "name": "Définir l'attribut",
-            "description": "Définir la valeur d'attribut de l'appareil",
+            "name": "Définir un attribut",
+            "description": "Définit la valeur d'un attribut de l'appareil",
             "fields" : {
                 "device_id": {
-                    "name": "Code appareil",
+                    "name": "Code de l'appareil",
                     "description": "Code de l'appareil (ID de l'appareil)"
                 },
                 "attribute": {
                     "name": "Attribut",
-                    "description": "Nom de l'attribut que vous souhaitez définir"
+                    "description": "Nom de l'attribut à définir"
                 },
                 "value": {
                     "name": "Valeur",
-                    "description": "Valeur d'attribut que vous souhaitez définir"
+                    "description": "Valeur de l'attribut à définir"
                 }
             }
         },
         "send_command": {
-            "name": "Customize command",
-            "description": "Send a customize command to device",
+            "name": "Commande personnalisée",
+            "description": "Envoie une commande personnalisée à l'appareil",
             "fields" : {
                 "device_id": {
-                    "name": "Code appareil",
+                    "name": "Code de l'appareil",
                     "description": "Code de l'appareil (ID de l'appareil)"
                 },
                 "cmd_type": {
-                    "name": "command type",
-                    "description": "The type of command，should be 3（query) or 2（set)"
+                    "name": "Type de commande",
+                    "description": "Type de commande : 3 (lecture) ou 2 (écriture)"
                 },
                 "cmd_body": {
-                    "name": "command body",
-                    "description": "The body of command, (not include MSmart protocol head and cheksum at the end)"
+                    "name": "Corps de la commande",
+                    "description": "Corps de la commande (sans l'en-tête du protocole MSmart ni le checksum final)"
                 }
             }
         }
