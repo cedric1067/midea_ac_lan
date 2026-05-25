@@ -10,6 +10,23 @@ from .security import CloudSecurity, MeijuCloudSecurity, MSmartCloudSecurity, Mi
 
 _LOGGER = logging.getLogger(__name__)
 
+_SENSITIVE_FIELDS = {
+    "password", "iampwd", "accessToken", "sessionId", "token", "key",
+    "loginAccount", "appKey", "iotKey", "src",
+}
+
+
+def _mask_sensitive(data):
+    """Return a shallow copy of `data` with sensitive values masked.
+
+    Why: Midea cloud payloads contain hashed passwords and access tokens;
+    debug logs were embedding them verbatim into home-assistant.log.
+    """
+    if not isinstance(data, dict):
+        return data
+    return {k: ("***" if k in _SENSITIVE_FIELDS and v else v) for k, v in data.items()}
+
+
 clouds = {
     "美的美居": {
         "class_name": "MeijuCloud",
@@ -118,7 +135,7 @@ class MideaCloud:
                 with self._api_lock:
                     r = await self._session.request("POST", url, headers=header, data=dump_data, timeout=10)
                     raw = await r.read()
-                    _LOGGER.debug(f"Midea cloud API url: {url}, data: {data}, response: {raw}")
+                    _LOGGER.debug(f"Midea cloud API url: {url}, data: {_mask_sensitive(data)}, status: {r.status}")
                     response = json.loads(raw)
                     break
             except Exception as e:
@@ -579,7 +596,7 @@ class MideaAirCloud(MideaCloud):
                 with self._api_lock:
                     r = await self._session.request("POST", url, headers=header, data=data, timeout=10)
                     raw = await r.read()
-                    _LOGGER.debug(f"Midea cloud API url: {url}, data: {data}, response: {raw}")
+                    _LOGGER.debug(f"Midea cloud API url: {url}, data: {_mask_sensitive(data)}, status: {r.status}")
                     response = json.loads(raw)
                     break
             except Exception as e:
